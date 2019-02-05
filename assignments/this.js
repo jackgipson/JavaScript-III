@@ -24,13 +24,11 @@ const polarBear = {
   
    polarBear.cook();
 
-myFunction();
+//Principle 2
 
-// Principle 2
+//code example for Implicit Binding
 
-// code example for Implicit Binding
-
-const polarBear = {
+ const polarBear = {
     name: 'Chuck',
     food: 'fish',
     cook: function() {
@@ -40,9 +38,9 @@ const polarBear = {
   
    polarBear.cook();  
 
-// Principle 3
+//Principle 3
 
-// code example for New Binding
+//code example for New Binding
 
 function GrizzlyBear(name, age) {
   
@@ -53,10 +51,10 @@ function GrizzlyBear(name, age) {
   const friend = new GrizzlyBear('Bubba', 67);
   console.log(friend);
 
-// Principle 4
+//Principle 4
 
 
-// code example for Explicit Binding
+//code example for Explicit Binding
 
 const skills = ["igloo\'s'", "drink martini\'s'", "sleep"];
 
@@ -64,7 +62,7 @@ function greet (skills1, skills2, skills3) {
      console.log(`Hello Grizzly Bear my name is ${this.name} and I love to eat ${this.food} and make ${skills1}, ${skills2} and ${skills3}.`) 
     };
 
-const polarBear = {
+ const polarBear = {
     name: 'Chuck',
     food: 'fish' 
 };
