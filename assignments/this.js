@@ -13,9 +13,17 @@
 
 // code example for Window Binding
 
-const myFunction = function () {
-    console.log(this);
-};
+const polarBear = {
+    name: 'Chuck',
+    food: 'fish',
+    cook: function() {
+      
+     console.log(`${name} loves to eat ${food}`) 
+    }
+  }
+  
+   polarBear.cook();
+
 myFunction();
 
 // Principle 2
@@ -27,5 +35,6 @@ myFunction();
 // code example for New Binding
 
 // Principle 4
+
 
 // code example for Explicit Binding
