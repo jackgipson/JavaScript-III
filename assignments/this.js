@@ -13,6 +13,11 @@
 
 // code example for Window Binding
 
+const myFunction = function () {
+    console.log(this);
+};
+myFunction();
+
 // Principle 2
 
 // code example for Implicit Binding
