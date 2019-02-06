@@ -159,22 +159,22 @@ Humanoid.prototype.greet = function() {
     language: 'Kur',
   });
 
-  // const hero = new God({
-  //   createdAt: new Date(),
-  //   dimensions: {
-  //     length: 1,
-  //     width: 2,
-  //     height: 4,
-  //   },
-  //   healthPoints: 20,
-  //   name: 'Gomoth',
-  //   team: 'Bothkale',
-  //   weapons: [
-  //     'Powerburst',
-  //     "Shoth'\ku",
-  //   ],
-  //   language: 'Zarmonn',
-  //});
+  const hero = new God({
+    createdAt: new Date(),
+    dimensions: {
+      length: 1,
+      width: 2,
+      height: 4,
+    },
+    healthPoints: 20,
+    name: 'Gomoth',
+    team: 'Bothkale',
+    weapons: [
+      'Powerburst',
+      "Shoth'\ku",
+    ],
+    language: 'Zarmonn',
+  });
 
   
   console.log(mage.createdAt); // Today's date
