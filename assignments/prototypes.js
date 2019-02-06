@@ -66,21 +66,21 @@ Humanoid.prototype.greet = function() {
   }
 
 
-  // function Beast(evil) {
-  //   Humanoid.call(this, evil);
-  // }
-  // Beast.prototype = Object.create(Humanoid.prototype);
-  // Beast.prototype.greet1 = function () {
-  //   return `I am the all powerful ${this.name} and I will destroy you with my ${this.weapons}.`
-  // }
+  function Beast(evil) {
+    Humanoid.call(this, evil);
+  }
+  Beast.prototype = Object.create(Humanoid.prototype);
+  Beast.prototype.greet1 = function () {
+    return `I am the all powerful ${this.name} and I will destroy you with my ${this.weapons}.`
+  }
 
-  // function God(good) {
-  //   Beast.call(this, good);
-  // }
-  // God.prototype = Object.create(Humanoid.prototype);
-  // God.prototype.greet2 = function () {
-  //   return `I am the all powerful ${this.name} and I will destroy you with my ${this.weapons} and my ${this.team}.`
-  // }
+  function God(good) {
+    Beast.call(this, good);
+  }
+  God.prototype = Object.create(Humanoid.prototype);
+  God.prototype.greet2 = function () {
+    return `I am the all powerful ${this.name} and I will destroy you with my ${this.weapons} and my ${this.team}.`
+  }
 
 
 /*
