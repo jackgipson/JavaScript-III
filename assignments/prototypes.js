@@ -36,7 +36,6 @@ function GameObject(gameProps) {
 function CharacterStats(health) {
   GameObject.call(this, health);
   this.healthPoints = health.healthPoints;
-  this.name = health.name;
 }
 
 CharacterStats.prototype = Object.create(GameObject.prototype);
