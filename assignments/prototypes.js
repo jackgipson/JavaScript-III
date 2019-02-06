@@ -142,22 +142,22 @@ Humanoid.prototype.greet = function() {
     language: 'Elvish',
   });
 
-  // const villain = new Beast({
-  //   createdAt: new Date(),
-  //   dimensions: {
-  //     length: 1,
-  //     width: 2,
-  //     height: 4,
-  //   },
-  //   healthPoints: 20,
-  //   name: 'Tanith',
-  //   team: 'Tanesians',
-  //   weapons: [
-  //     'Bomb',
-  //     'Athame',
-  //   ],
-  //   language: 'Kur',
-  // });
+  const villain = new Beast({
+    createdAt: new Date(),
+    dimensions: {
+      length: 1,
+      width: 2,
+      height: 4,
+    },
+    healthPoints: 20,
+    name: 'Tanith',
+    team: 'Tanesians',
+    weapons: [
+      'Bomb',
+      'Athame',
+    ],
+    language: 'Kur',
+  });
 
   // const hero = new God({
   //   createdAt: new Date(),
