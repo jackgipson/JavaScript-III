@@ -142,7 +142,8 @@ Humanoid.prototype.greet = function() {
     language: 'Elvish',
   });
 
-  const villain = new Beast({
+  // ------------------------------Added as part of the Stretch-------------------
+  const villain = new Beast({ // A new child of Humanoid
     createdAt: new Date(),
     dimensions: {
       length: 1,
@@ -159,7 +160,7 @@ Humanoid.prototype.greet = function() {
     language: 'Kur',
   });
 
-  const hero = new God({
+  const hero = new God({ // A new child of Beast
     createdAt: new Date(),
     dimensions: {
       length: 1,
