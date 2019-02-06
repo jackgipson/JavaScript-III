@@ -66,6 +66,23 @@ Humanoid.prototype.greet = function() {
   }
 
 
+  // function Beast(evil) {
+  //   Humanoid.call(this, evil);
+  // }
+  // Beast.prototype = Object.create(Humanoid.prototype);
+  // Beast.prototype.greet1 = function () {
+  //   return `I am the all powerful ${this.name} and I will destroy you with my ${this.weapons}.`
+  // }
+
+  // function God(good) {
+  //   Beast.call(this, good);
+  // }
+  // God.prototype = Object.create(Humanoid.prototype);
+  // God.prototype.greet2 = function () {
+  //   return `I am the all powerful ${this.name} and I will destroy you with my ${this.weapons} and my ${this.team}.`
+  // }
+
+
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Humanoid
   * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
@@ -125,6 +142,41 @@ Humanoid.prototype.greet = function() {
     language: 'Elvish',
   });
 
+  // const villain = new Beast({
+  //   createdAt: new Date(),
+  //   dimensions: {
+  //     length: 1,
+  //     width: 2,
+  //     height: 4,
+  //   },
+  //   healthPoints: 20,
+  //   name: 'Tanith',
+  //   team: 'Tanesians',
+  //   weapons: [
+  //     'Bomb',
+  //     'Athame',
+  //   ],
+  //   language: 'Kur',
+  // });
+
+  // const hero = new God({
+  //   createdAt: new Date(),
+  //   dimensions: {
+  //     length: 1,
+  //     width: 2,
+  //     height: 4,
+  //   },
+  //   healthPoints: 20,
+  //   name: 'Gomoth',
+  //   team: 'Bothkale',
+  //   weapons: [
+  //     'Powerburst',
+  //     "Shoth'\ku",
+  //   ],
+  //   language: 'Zarmonn',
+  //});
+
+  
   console.log(mage.createdAt); // Today's date
   console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
   console.log(swordsman.healthPoints); // 15
@@ -135,7 +187,8 @@ Humanoid.prototype.greet = function() {
   console.log(archer.greet()); // Lilith offers a greeting in Elvish.
   console.log(mage.takeDamage()); // Bruce took damage.
   console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
-
+  // console.log(villain.greet1());
+  // console.log(hero.greet2());
 
   // Stretch task: 
   // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
