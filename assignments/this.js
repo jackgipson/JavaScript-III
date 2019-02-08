@@ -13,16 +13,10 @@
 
 // code example for Window Binding
 
-const polarBear = {
-    name: 'Chuck',
-    food: 'fish',
-    cook: function() {
-      
-     console.log(`${name} loves to eat ${food}`) 
-    }
-  }
-  
-   polarBear.cook();
+const myFunction = function () {
+  console.log(this);
+};
+myFunction();
 
 //Principle 2
 
