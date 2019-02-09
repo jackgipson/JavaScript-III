@@ -16,12 +16,33 @@
   * destroy() // prototype method that returns: '{this.name} was removed from the game.'
 */
 
+function GameObject(gameProps) {
+  this.createdAt = gameProps.createdAt;
+  this.name = gameProps.name;
+  this.dimensions = gameProps.dimensions;
+}
+
+  GameObject.prototype.destroy = function() {
+    return `${this.name} was removed from the game.`;
+}
+
 /*
   === CharacterStats ===
   * healthPoints
   * takeDamage() // prototype method -> returns the string '<object name> took damage.'
   * should inherit destroy() from GameObject's prototype
 */
+
+function CharacterStats(health) {
+  GameObject.call(this, health);
+  this.healthPoints = health.healthPoints;
+}
+
+CharacterStats.prototype = Object.create(GameObject.prototype);
+
+  CharacterStats.prototype.takeDamage = function() {
+    return `${this.health} took damage.`
+  }
 
 /*
   === Humanoid (Having an appearance or character resembling that of a human.) ===
@@ -33,6 +54,35 @@
   * should inherit takeDamage() from CharacterStats
 */
  
+function Humanoid(alien) {
+  CharacterStats.call(this, alien);
+  this.team = alien.team;
+  this.weapons = alien.weapons;
+  this.language = alien.language;
+}
+Humanoid.prototype = Object.create(CharacterStats.prototype);
+Humanoid.prototype.greet = function() {
+    return `${this.name} offers a greeting in ${this.language}.`
+  }
+
+
+  function Beast(evil) {
+    Humanoid.call(this, evil);
+  }
+  Beast.prototype = Object.create(Humanoid.prototype);
+  Beast.prototype.greet1 = function () {
+    return `I am the all powerful ${this.name} and I will destroy you with my ${this.weapons}.`
+  }
+
+  function God(good) {
+    Beast.call(this, good);
+  }
+  God.prototype = Object.create(Humanoid.prototype);
+  God.prototype.greet2 = function () {
+    return `I am the all powerful ${this.name} and I will destroy you with my ${this.weapons} and my ${this.team}.`
+  }
+
+
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Humanoid
   * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
@@ -41,7 +91,7 @@
 
 // Test you work by un-commenting these 3 objects and the list of console logs below:
 
-/*
+
   const mage = new Humanoid({
     createdAt: new Date(),
     dimensions: {
@@ -92,6 +142,42 @@
     language: 'Elvish',
   });
 
+  // ------------------------------Added as part of the Stretch-------------------
+  const villain = new Beast({ // A new child of Humanoid
+    createdAt: new Date(),
+    dimensions: {
+      length: 1,
+      width: 2,
+      height: 4,
+    },
+    healthPoints: 20,
+    name: 'Tanith',
+    team: 'Tanesians',
+    weapons: [
+      'Bomb',
+      'Athame',
+    ],
+    language: 'Kur',
+  });
+
+  const hero = new God({ // A new child of Beast
+    createdAt: new Date(),
+    dimensions: {
+      length: 1,
+      width: 2,
+      height: 4,
+    },
+    healthPoints: 20,
+    name: 'Gomoth',
+    team: 'Bothkale',
+    weapons: [
+      'Powerburst',
+      "Shoth'\ku",
+    ],
+    language: 'Zarmonn',
+  });
+
+  
   console.log(mage.createdAt); // Today's date
   console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
   console.log(swordsman.healthPoints); // 15
@@ -102,7 +188,8 @@
   console.log(archer.greet()); // Lilith offers a greeting in Elvish.
   console.log(mage.takeDamage()); // Bruce took damage.
   console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
-*/
+  console.log(villain.greet1());
+  console.log(hero.greet2());
 
   // Stretch task: 
   // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
